@@ -1,0 +1,38 @@
+server:
+  port: 8887
+#日志相关
+logging:
+  path: E:/study/logs
+  level:
+    upp-fundprocess: DEBUG
+#数据源配置
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://45.40.198.219:3306/upsdb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: uppdb
+    password: uppdb
+#国际化配置
+  messages:
+    basename: errorCode
+#应用名称
+  application:
+    name: upp-paygate
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:sqlMap/*.xml
+#spring cloud eureka
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+#自定义配置
+seqNbr:
+  datacerterId: 0
+paygate:
+  sign:
+    keyWord: testKey
